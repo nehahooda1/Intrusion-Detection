@@ -1,0 +1,286 @@
+In dataset testing results:
+
+In dataset testing results for 2017: 
+========================
+=== WITH META RESULTS ===
+========================
+[[31256  1968]
+ [  236  6540]]
+              precision    recall  f1-score   support
+
+           0     0.9925    0.9408    0.9659     33224
+           1     0.7687    0.9652    0.8558      6776
+
+    accuracy                         0.9449     40000
+   macro avg     0.8806    0.9530    0.9109     40000
+weighted avg     0.9546    0.9449    0.9473     40000
+
+========================
+=== NO META RESULTS ===
+========================
+[[31247  1977]
+ [  447  6329]]
+              precision    recall  f1-score   support
+
+           0     0.9859    0.9405    0.9627     33224
+           1     0.7620    0.9340    0.8393      6776
+
+    accuracy                         0.9394     40000
+   macro avg     0.8739    0.9373    0.9010     40000
+weighted avg     0.9480    0.9394    0.9418     40000
+
+
+
+In dataset testing results for 2018:
+========================
+=== WITH META RESULTS ===
+========================
+[[28795  5377]
+ [ 1429  4399]]
+              precision    recall  f1-score   support
+
+           0     0.9527    0.8426    0.8943     34172
+           1     0.4500    0.7548    0.5638      5828
+
+    accuracy                         0.8298     40000
+   macro avg     0.7013    0.7987    0.7291     40000
+weighted avg     0.8795    0.8298    0.8462     40000
+
+========================
+=== NO META RESULTS ===
+========================
+[[28211  5961]
+ [ 1409  4419]]
+              precision    recall  f1-score   support
+
+           0     0.9524    0.8256    0.8845     34172
+           1     0.4257    0.7582    0.5453      5828
+
+    accuracy                         0.8157     40000
+   macro avg     0.6891    0.7919    0.7149     40000
+weighted avg     0.8757    0.8157    0.8350     40000
+
+
+In-dataset results for 2019:
+========================
+=== WITH META RESULTS ===
+========================
+[[ 9049    34]
+ [  134 30783]]
+              precision    recall  f1-score   support
+
+           0     0.9854    0.9963    0.9908      9083
+           1     0.9989    0.9957    0.9973     30917
+
+    accuracy                         0.9958     40000
+   macro avg     0.9922    0.9960    0.9940     40000
+weighted avg     0.9958    0.9958    0.9958     40000
+
+========================
+=== NO META RESULTS ===
+========================
+[[ 8859   224]
+ [  134 30783]]
+              precision    recall  f1-score   support
+
+           0     0.9851    0.9753    0.9802      9083
+           1     0.9928    0.9957    0.9942     30917
+
+    accuracy                         0.9910     40000
+   macro avg     0.9889    0.9855    0.9872     40000
+weighted avg     0.9910    0.9910    0.9910     40000
+
+Cross testing results for all 4 cross tests:
+
+========================================
+TRAIN: CICIDS2017  →  TEST: CICIDS2018
+========================================
+Train shape after sampling: (200000, 53)
+Test shape after sampling:  (200000, 80)
+Common feature count (before removing meta): 52
+
+--- WITH META ---
+Feature count (WITH META): 52
+
+[WITH META] Confusion Matrix:
+[[149498  21360]
+ [ 26520   2622]]
+
+[WITH META] Classification Report:
+              precision    recall  f1-score   support
+
+           0     0.8493    0.8750    0.8620    170858
+           1     0.1093    0.0900    0.0987     29142
+
+    accuracy                         0.7606    200000
+   macro avg     0.4793    0.4825    0.4803    200000
+weighted avg     0.7415    0.7606    0.7508    200000
+
+
+--- NO META ---
+Feature count (NO META): 40
+
+[NO META] Confusion Matrix:
+[[142959  27899]
+ [ 26252   2890]]
+
+[NO META] Classification Report:
+              precision    recall  f1-score   support
+
+           0     0.8449    0.8367    0.8408    170858
+           1     0.0939    0.0992    0.0964     29142
+
+    accuracy                         0.7292    200000
+   macro avg     0.4694    0.4679    0.4686    200000
+weighted avg     0.7354    0.7292    0.7323    200000
+
+
+========================================
+END: TRAIN CICIDS2017  →  TEST CICIDS2018
+========================================
+
+
+========================================
+TRAIN: CICIDS2017  →  TEST: CICDDoS2019
+========================================
+Train shape after sampling: (200000, 53)
+Test shape after sampling:  (200000, 78)
+Common feature count (before removing meta): 51
+
+--- WITH META ---
+Feature count (WITH META): 51
+
+[WITH META] Confusion Matrix:
+[[ 44452    962]
+ [139114  15472]]
+
+[WITH META] Classification Report:
+              precision    recall  f1-score   support
+
+           0     0.2422    0.9788    0.3883     45414
+           1     0.9415    0.1001    0.1809    154586
+
+    accuracy                         0.2996    200000
+   macro avg     0.5918    0.5395    0.2846    200000
+weighted avg     0.7827    0.2996    0.2280    200000
+
+
+--- NO META ---
+Feature count (NO META): 40
+
+[NO META] Confusion Matrix:
+[[ 44239   1175]
+ [142844  11742]]
+
+[NO META] Classification Report:
+              precision    recall  f1-score   support
+
+           0     0.2365    0.9741    0.3806     45414
+           1     0.9090    0.0760    0.1402    154586
+
+    accuracy                         0.2799    200000
+   macro avg     0.5728    0.5250    0.2604    200000
+weighted avg     0.7563    0.2799    0.1948    200000
+
+
+========================================
+END: TRAIN CICIDS2017  →  TEST CICDDoS2019
+========================================
+
+
+========================================
+TRAIN: CICIDS2018  →  TEST: CICIDS2017
+========================================
+Train shape after sampling: (200000, 80)
+Test shape after sampling:  (200000, 53)
+Common feature count (before removing meta): 52
+
+--- WITH META ---
+Feature count (WITH META): 52
+
+[WITH META] Confusion Matrix:
+[[ 48425 117697]
+ [  2667  31211]]
+
+[WITH META] Classification Report:
+              precision    recall  f1-score   support
+
+           0     0.9478    0.2915    0.4459    166122
+           1     0.2096    0.9213    0.3415     33878
+
+    accuracy                         0.3982    200000
+   macro avg     0.5787    0.6064    0.3937    200000
+weighted avg     0.8228    0.3982    0.4282    200000
+
+
+--- NO META ---
+Feature count (NO META): 40
+
+[NO META] Confusion Matrix:
+[[97040 69082]
+ [ 1891 31987]]
+
+[NO META] Classification Report:
+              precision    recall  f1-score   support
+
+           0     0.9809    0.5841    0.7322    166122
+           1     0.3165    0.9442    0.4741     33878
+
+    accuracy                         0.6451    200000
+   macro avg     0.6487    0.7642    0.6031    200000
+weighted avg     0.8683    0.6451    0.6885    200000
+
+
+========================================
+END: TRAIN CICIDS2018  →  TEST CICIDS2017
+========================================
+
+
+========================================
+TRAIN: CICIDS2018  →  TEST: CICDDoS2019
+========================================
+Train shape after sampling: (200000, 80)
+Test shape after sampling:  (200000, 78)
+Common feature count (before removing meta): 69
+
+--- WITH META ---
+Feature count (WITH META): 69
+
+[WITH META] Confusion Matrix:
+[[15224 30190]
+ [83648 70938]]
+
+[WITH META] Classification Report:
+              precision    recall  f1-score   support
+
+           0     0.1540    0.3352    0.2110     45414
+           1     0.7015    0.4589    0.5548    154586
+
+    accuracy                         0.4308    200000
+   macro avg     0.4277    0.3971    0.3829    200000
+weighted avg     0.5771    0.4308    0.4768    200000
+
+
+--- NO META ---
+Feature count (NO META): 58
+
+[NO META] Confusion Matrix:
+[[30737 14677]
+ [78941 75645]]
+
+[NO META] Classification Report:
+              precision    recall  f1-score   support
+
+           0     0.2802    0.6768    0.3964     45414
+           1     0.8375    0.4893    0.6177    154586
+
+    accuracy                         0.5319    200000
+   macro avg     0.5589    0.5831    0.5071    200000
+weighted avg     0.7110    0.5319    0.5675    200000
+
+
+========================================
+END: TRAIN CICIDS2018  →  TEST CICDDoS2019
+========================================
+
+
